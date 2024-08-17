@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page with Loading Animation</title>
+    <style>
+        /* Basic styling for loading animation */
+        #loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Your Input</h1>
+    <form action="/submit" method="POST">
+        <input type="text" name="url" placeholder="URL">
+        <input type="text" name="problem" placeholder="Enter your problem">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Loading animation -->
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        // Get the form element
+        const form = document.getElementById('myForm');
+        const loading = document.getElementById('loading');
+
+        // Add event listener to show loading animation on form submit
+        form.addEventListener('submit', function(event) {
+            loading.style.display = 'block';  // Show the loading animation
+        });
+    </script>
+</body>
+</html>
+
+
