@@ -60,8 +60,10 @@ def submit():
     else:
         print("No contact pages found.")
 
+    print("\n\n************** Data sending to llama3 model **************\n\n")
     # LLM processing
     model_name = "llama3.2:latest"
+    # model_name = "llama3:8b"
     problem = request.form['problem']
     
     prompt = (
