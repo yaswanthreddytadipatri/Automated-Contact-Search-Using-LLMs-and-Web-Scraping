@@ -1,4 +1,4 @@
-Flask==2.0.1
-requests==2.27.1
-beautifulsoup4==4.12.2
-ollama==0.3.14
+Flask
+requests
+beautifulsoup4
+ollama
